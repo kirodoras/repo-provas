@@ -5,7 +5,7 @@ console.log(process.env.DATABASE_URL);
 
 beforeEach(() => {
   // essa função será executada antes de cada it() rodar
-  //await prisma.$executeRaw`TRUNCATE TABLE receitas;`;
+  //await client.$executeRaw`TRUNCATE TABLE [TABLE-NAME];`;
 });
 
 describe("GET /", () => {
@@ -19,5 +19,5 @@ describe("GET /", () => {
 
 afterAll(() => {
   // essa função será executada ao final de todos os testes
-  //await prisma.$disconnect();
+  //await client.$disconnect();
 });
