@@ -1,6 +1,8 @@
 import app from "../src/app";
 import supertest from "supertest";
 
+console.log(process.env.DATABASE_URL);
+
 beforeEach(() => {
   // essa função será executada antes de cada it() rodar
   //await prisma.$executeRaw`TRUNCATE TABLE receitas;`;
