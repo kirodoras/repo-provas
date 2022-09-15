@@ -20,7 +20,7 @@ model User {
 
 model Term {
   id     Int    @id @default(autoincrement())
-  number String @unique
+  number Int @unique
 
   Disciplines Discipline[]
 

@@ -6,7 +6,7 @@ export async function signUp(req: Request, res: Response) {
   const { email, password } = req.body;
   const user: usersTypes.TUser = { email, password };
   await usersServices.signUp(user);
-  res.sendStatus(200);
+  res.sendStatus(201);
 }
 
 export async function signIn(req: Request, res: Response) {
