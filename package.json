@@ -9,11 +9,12 @@
     "dev": "npx nodemon ./src/server.ts",
     "migrate": "npx prisma migrate dev",
     "studio": "npx prisma studio",
+    "seed": "npx prisma db seed",
     "lint": "eslint ./src --ext .ts",
     "lint:fix": "eslint ./src --ext .ts --fix",
     "test": "dotenv -e .env.test jest -i --no-cache",
-    "db:test": "dotenv -e .env.test prisma migrate dev",
-    "seed:test": "dotenv -e .env.test prisma db seed"
+    "test:migrate": "dotenv -e .env.test prisma migrate dev",
+    "test:seed": "dotenv -e .env.test prisma db seed"
   },
   "prisma": {
     "seed": "ts-node prisma/seed.ts"
