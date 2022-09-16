@@ -1,5 +1,5 @@
 import { Request, Response } from "express";
-import * as usersServices from "../services/usersServices";
+import * as usersServices from "../services/usersService";
 import * as usersTypes from "../types/usersTypes";
 
 export async function signUp(req: Request, res: Response) {

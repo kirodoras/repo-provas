@@ -3,7 +3,7 @@ import supertest from "supertest";
 
 console.log(process.env.DATABASE_URL);
 
-beforeEach(() => {
+beforeEach(async () => {
   // essa função será executada antes de cada it() rodar
   //await client.$executeRaw`TRUNCATE TABLE [TABLE-NAME];`;
 });
@@ -17,7 +17,7 @@ describe("GET /", () => {
   });
 });
 
-afterAll(() => {
+afterAll(async () => {
   // essa função será executada ao final de todos os testes
   //await client.$disconnect();
 });
