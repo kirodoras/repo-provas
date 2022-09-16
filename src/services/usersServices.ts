@@ -1,7 +1,7 @@
-import * as usersTypes from "../types/users.types";
-import * as usersRepository from "../repositories/users.repository";
-import * as bcryptProvider from "../providers/bcrypt.provider";
-import * as jwtProvider from "../providers/jwt.provider";
+import * as usersTypes from "../types/usersTypes";
+import * as usersRepository from "../repositories/usersRepository";
+import * as bcryptProvider from "../providers/bcryptProvider";
+import * as jwtProvider from "../providers/jwtProvider";
 
 export async function signUp(user: usersTypes.TUser) {
   const { email, password } = user;

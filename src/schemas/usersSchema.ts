@@ -1,5 +1,5 @@
 import joi from "joi";
-import * as usersTypes from "../types/users.types";
+import * as usersTypes from "../types/usersTypes";
 
 const signUpSchema = joi.object<usersTypes.IUserSingUp>({
   email: joi.string().email().required(),

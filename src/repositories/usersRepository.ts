@@ -1,5 +1,5 @@
 import client from "../database";
-import * as usersTypes from "../types/users.types";
+import * as usersTypes from "../types/usersTypes";
 
 export async function insert(user: usersTypes.TUser) {
   const result = await client.user.create({

@@ -1,6 +1,6 @@
 import client from "../../src/database";
 import { faker } from "@faker-js/faker";
-import * as bcryptUtil from "./utils/bcrypt.util";
+import * as bcryptUtil from "./utils/bcryptUtil";
 
 export function fakerUserSignUp() {
   const password = faker.internet.password(8);

@@ -1,7 +1,7 @@
 import app from "../src/app";
 import supertest from "supertest";
 import client from "../src/database";
-import * as usersFactory from "./factories/users.factory";
+import * as usersFactory from "./factories/usersFactory";
 
 beforeEach(async () => {
   await client.$executeRaw`TRUNCATE TABLE users;`;
