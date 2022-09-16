@@ -17,7 +17,7 @@ export function decode(token: string) {
   let payload: JwtPayload | string | undefined;
   jwt.verify(token, JWT_SECRET, (err, decoded) => {
     if (err) {
-      throw { type: "unauthorized", message: "Invalid token" };
+      throw { type: "unauthorized", message: "Token expired" };
     }
     payload = decoded;
   });
