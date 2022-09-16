@@ -17,7 +17,7 @@ export async function tokenValidator(
   const token: string | undefined = authorization?.replace("Bearer ", "");
 
   if (!token) {
-    throw { type: "unauthorized", message: "Invalid request" };
+    throw { type: "unauthorized", message: "Invalid token format" };
   }
 
   const payload = jwtProvider.decode(token);
