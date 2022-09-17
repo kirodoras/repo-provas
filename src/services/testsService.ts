@@ -15,3 +15,7 @@ export async function insert(test: testsTypes.TTest) {
 export async function getByTerms() {
   return await testsRepository.getByTerms();
 }
+
+export async function getByTeachers() {
+  return await testsRepository.getByTeachers();
+}
