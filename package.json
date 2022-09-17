@@ -15,8 +15,7 @@
     "test": "dotenv -e .env.test jest -i --no-cache",
     "test:migrate": "dotenv -e .env.test prisma migrate dev",
     "test:studio": "dotenv -e .env.test npx prisma studio",
-    "test:seed": "dotenv -e .env.test prisma db seed",
-    "test:setup": "npm run test:migrate && npm run test:seed"
+    "test:seed": "dotenv -e .env.test prisma db seed"
   },
   "prisma": {
     "seed": "ts-node prisma/seed.ts"

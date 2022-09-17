@@ -33,7 +33,11 @@ async function createTeachersDisciplines(
   await client.$executeRaw`TRUNCATE TABLE teachers_disciplines CASCADE;`;
   for (let i = 0; i < disciplinesIds.length; i++) {
     await client.teacherDiscipline.create({
-      data: { teacherId: teachersIds[pos], disciplineId: disciplinesIds[i] },
+      data: {
+        id: i + 1,
+        teacherId: teachersIds[pos],
+        disciplineId: disciplinesIds[i],
+      },
     });
     if (i === 2) pos = 1;
   }
