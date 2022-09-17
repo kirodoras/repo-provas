@@ -36,3 +36,37 @@ export async function getByTerms() {
   });
   return tests;
 }
+
+export async function getByTeachers() {
+  const tests: object[] = await client.teacher.findMany({
+    select: {
+      id: true,
+      name: true,
+      TeacherDiscipline: {
+        select: {
+          Discipline: {
+            select: {
+              id: true,
+              name: true,
+              Term: {
+                select: {
+                  id: true,
+                  number: true,
+                },
+              },
+            },
+          },
+          Test: {
+            select: {
+              id: true,
+              name: true,
+              pdfUrl: true,
+              Category: true,
+            },
+          },
+        },
+      },
+    },
+  });
+  return tests;
+}
