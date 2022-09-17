@@ -36,3 +36,25 @@ describe(`POST /tests/submit`, () => {
     expect(status).toEqual(422);
   });
 });
+
+describe(`GET /tests/by-terms`, () => {
+  it("should return 200", async () => {
+    const token = await usersFactory.createUserReturnToken();
+    console.log({ token });
+    const result = await supertest(app)
+      .get("/tests/by-terms")
+      .send()
+      .set("authorization", `Bearer ${token}`);
+    const status = result.status;
+    expect(status).toEqual(200);
+    expect(Array.isArray(result.body)).toBeTruthy();
+  });
+  it("should return 401, invalid token", async () => {
+    const result = await supertest(app)
+      .get("/tests/by-terms")
+      .send()
+      .set("authorization", `Bearer XXXXXXX`);
+    const status = result.status;
+    expect(status).toEqual(401);
+  });
+});
