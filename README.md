@@ -138,7 +138,6 @@ RESPONSE IN SUCCESS
 
 ## Search tests by terms
 ```yml
-```yml
 GET tests/by-terms
     - headers: {
       "Authorization": Bearer [JWT-TOKEN]
