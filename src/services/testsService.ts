@@ -11,3 +11,7 @@ export async function insert(test: testsTypes.TTest) {
   );
   await testsRepository.insert(test);
 }
+
+export async function getByTerms() {
+  return await testsRepository.getByTerms();
+}
