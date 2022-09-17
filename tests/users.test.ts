@@ -1,11 +1,6 @@
 import app from "../src/app";
 import supertest from "supertest";
-import client from "../src/database";
 import * as usersFactory from "./factories/usersFactory";
-
-beforeEach(async () => {
-  await client.$executeRaw`TRUNCATE TABLE users;`;
-});
 
 describe("POST /users/signup", () => {
   it("should return 201", async () => {
@@ -47,8 +42,4 @@ describe("POST /users/signin", () => {
     const status = result.status;
     expect(status).toEqual(401);
   });
-});
-
-afterAll(async () => {
-  await client.$disconnect();
 });
