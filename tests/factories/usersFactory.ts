@@ -1,6 +1,7 @@
 import client from "../../src/database";
 import { faker } from "@faker-js/faker";
-import * as bcryptUtil from "./utils/bcryptUtil";
+import * as brycptProvider from "../../src/providers/bcryptProvider";
+import * as jwtProvider from "../../src/providers/jwtProvider";
 
 export function fakerUserSignUp() {
   const password = faker.internet.password(8);
@@ -52,7 +53,7 @@ export async function createUserSignIn() {
     await client.user.create({
       data: {
         email: user.email,
-        password: await bcryptUtil.encode(user.password),
+        password: await brycptProvider.encode(user.password),
       },
     });
     return {
@@ -70,13 +71,30 @@ export async function createUserSignInWrongPassword() {
     await client.user.create({
       data: {
         email: user.email,
-        password: await bcryptUtil.encode(user.password),
+        password: await brycptProvider.encode(user.password),
       },
     });
     return {
       email: user.email,
       password: faker.internet.password(8),
     };
+  } catch (err) {
+    console.log(err);
+  }
+}
+
+export async function createUserReturnToken() {
+  try {
+    const user = fakerUserSignUp();
+    await client.user.create({
+      data: {
+        email: user.email,
+        password: await brycptProvider.encode(user.password),
+      },
+    });
+    const email = user.email;
+    const token = jwtProvider.encode({ email });
+    return token;
   } catch (err) {
     console.log(err);
   }
