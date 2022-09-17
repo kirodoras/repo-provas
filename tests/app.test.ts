@@ -1,11 +1,14 @@
 import app from "../src/app";
 import supertest from "supertest";
+import client from "../src/database";
 
 console.log(process.env.DATABASE_URL);
-
 beforeEach(async () => {
-  // essa função será executada antes de cada it() rodar
-  //await client.$executeRaw`TRUNCATE TABLE [TABLE-NAME];`;
+  await client.$executeRaw`TRUNCATE TABLE users;`;
+  await client.$executeRaw`TRUNCATE TABLE tests;`;
+});
+afterAll(async () => {
+  await client.$disconnect();
 });
 
 describe("GET /", () => {
@@ -15,9 +18,4 @@ describe("GET /", () => {
 
     expect(status).toEqual(200);
   });
-});
-
-afterAll(async () => {
-  // essa função será executada ao final de todos os testes
-  //await client.$disconnect();
 });
