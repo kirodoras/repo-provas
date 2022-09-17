@@ -13,5 +13,9 @@ TestsRouter.post(
   schemaValidator.body(testsSchema.testsSchema),
   testsController.insert
 );
+TestsRouter.get(
+  `${PATH}/by-terms`,
+  testsController.getByTerms
+);
 
 export default TestsRouter;
