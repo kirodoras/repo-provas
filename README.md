@@ -31,6 +31,7 @@
 
 - [Description](#description)
 - [Getting Started](#getting-started)
+- [Running tests](#running-tests)
 - [Draw SQL](#draw-sql)
 - [Routes](#routes)
   - [Users](#users)
@@ -73,7 +74,18 @@ npm run dev
 ```
 
 You can now access the API's endpoints by navigating to `http://localhost:5008/` or to the deployed URL `https://app-provas.herokuapp.com/`.
+<!-- Tests -->
+# Running tests
+After following the [Getting Started](#getting-started) steps, follow the commands:
 
+to migrate the test database:
+```git
+npm run test:migrate
+```
+Finally, run the tests:
+```git
+npm run test
+```
 <!-- API Reference -->
 # Draw SQL
 
