@@ -146,7 +146,7 @@ GET tests/by-terms
     }
 RESPONSE IN SUCCESS
     - status: 200
-    - body: [Array of tests grouped by terms]
+    - body: Object[] of tests grouped by terms
 ```
 
 ## Search tests by teachers
@@ -159,7 +159,7 @@ GET tests/by-teachers
     }
 RESPONSE IN SUCCESS
     - status: 200
-    - body: [Array of tests grouped by teachers]
+    - body: Object[] of tests grouped by teachers
 ```
 
 <!-- Contact -->
