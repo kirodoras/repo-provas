@@ -78,6 +78,8 @@ You can now access the API's endpoints by navigating to `http://localhost:5008/`
 # Running tests
 After following the [Getting Started](#getting-started) steps, follow the commands:
 
+First of all configure an `.env.test` file
+
 to migrate the test database:
 ```git
 npm run test:migrate
