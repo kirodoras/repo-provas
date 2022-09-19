@@ -58,10 +58,14 @@ git clone https://github.com/kirodoras/repo-provas
 
 Then, navigate to the project folder and run the following command:
 
+to install dependencies:
 ```git
 npm i -y
 ```
-
+to migrate the database:
+```git
+npm run migrate
+```
 Finally, start the server:
 
 ```git
